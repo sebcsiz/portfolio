@@ -1,0 +1,47 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient-chat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1929;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d4d4d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="noise-chat">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix in="colorNoise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 .1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-chat)"/>
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-chat)" opacity="0.3" filter="url(#noise-chat)"/>
+  
+  <!-- Title -->
+  <text x="60" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Chatroom Web Application</text>
+  <text x="60" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#5eead4" opacity="0.8">Real-time messaging platform</text>
+  
+  <!-- Center visual: Real-time chat conversation -->
+  <g transform="translate(400, 250)">
+    <!-- Left chat bubble (received) -->
+    <path d="M -120 -40 Q -145 -40 -145 -15 L -145 15 Q -145 40 -120 40 L -70 40 Q -55 40 -55 25 L -55 15 Q -55 0 -70 0 L -85 0 Q -100 0 -100 -15 L -100 -30 Q -100 -40 -85 -40 Z" 
+          stroke="#5eead4" stroke-width="3" fill="#5eead4" fill-opacity="0.1" opacity="0.8"/>
+    <!-- Message lines in left bubble -->
+    <line x1="-130" y1="-15" x2="-70" y2="-15" stroke="#5eead4" stroke-width="1.5" opacity="0.3"/>
+    <line x1="-130" y1="0" x2="-80" y2="0" stroke="#5eead4" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Right chat bubble (sent) -->
+    <path d="M 70 -40 Q 100 -40 100 -15 L 100 15 Q 100 40 70 40 L 120 40 Q 145 40 145 15 L 145 -15 Q 145 -40 130 -40 L 115 -40 Q 100 -40 100 -25 L 100 -15 Q 100 0 115 0 L 130 0 Q 145 0 145 -15 Z" 
+          stroke="#5eead4" stroke-width="3" fill="#5eead4" fill-opacity="0.15" opacity="0.8"/>
+    <!-- Message lines in right bubble -->
+    <line x1="80" y1="-15" x2="135" y2="-15" stroke="#5eead4" stroke-width="1.5" opacity="0.3"/>
+    <line x1="80" y1="0" x2="125" y2="0" stroke="#5eead4" stroke-width="1.5" opacity="0.3"/>
+    
+    <!-- Connection indicator (pulse effect) -->
+    <circle cx="0" cy="50" r="8" fill="#5eead4" opacity="0.4">
+      <animate attributeName="r" values="8;12;8" dur="2s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0.4;0.6;0.4" dur="2s" repeatCount="indefinite"/>
+    </circle>
+  </g>
+</svg>
+

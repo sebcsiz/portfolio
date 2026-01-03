@@ -1,0 +1,43 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient-wine" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1929;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d4d4d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="noise-wine">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix in="colorNoise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 .1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-wine)"/>
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-wine)" opacity="0.3" filter="url(#noise-wine)"/>
+  
+  <!-- Title -->
+  <text x="60" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Wine Tour Mobile App</text>
+  <text x="60" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#5eead4" opacity="0.8">Browse and book tours</text>
+  
+  <!-- Center visual: Wine glass with map pin integration -->
+  <g transform="translate(400, 250)">
+    <!-- Wine glass with wine -->
+    <path d="M -50 -35 L -50 25 M -50 25 Q -50 38 -35 38 L 35 38 Q 50 38 50 25 L 50 -35" 
+          stroke="#5eead4" stroke-width="3.5" fill="none" opacity="0.8"/>
+    <!-- Wine level -->
+    <ellipse cx="0" cy="-5" rx="45" ry="8" fill="#5eead4" opacity="0.2"/>
+    <!-- Stem -->
+    <line x1="0" y1="25" x2="0" y2="50" stroke="#5eead4" stroke-width="3" opacity="0.8"/>
+    <!-- Base -->
+    <ellipse cx="0" cy="50" rx="18" ry="6" stroke="#5eead4" stroke-width="3" fill="none" opacity="0.8"/>
+    
+    <!-- Map pin with route line -->
+    <path d="M 90 -10 L 90 30 Q 90 45 75 45 Q 60 45 60 30 L 60 -10 Z" stroke="#5eead4" stroke-width="3" fill="#5eead4" opacity="0.15"/>
+    <circle cx="75" cy="5" r="8" fill="#5eead4" opacity="0.4"/>
+    <!-- Connection line -->
+    <path d="M 50 0 Q 70 0 67 5" stroke="#5eead4" stroke-width="2" fill="none" opacity="0.5" stroke-dasharray="4,4"/>
+  </g>
+</svg>
+

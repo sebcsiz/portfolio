@@ -1,0 +1,53 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient-portfolio" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0a1929;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0d4d4d;stop-opacity:1" />
+    </linearGradient>
+    <filter id="noise-portfolio">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/>
+      <feColorMatrix in="colorNoise" type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 .1"/>
+      </feComponentTransfer>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-portfolio)"/>
+  <rect width="800" height="500" rx="12" fill="url(#bg-gradient-portfolio)" opacity="0.3" filter="url(#noise-portfolio)"/>
+  
+  <!-- Title -->
+  <text x="60" y="80" font-family="system-ui, -apple-system, sans-serif" font-size="48" font-weight="700" fill="#ffffff">Portfolio Website</text>
+  <text x="60" y="115" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="400" fill="#5eead4" opacity="0.8">Projects and coursework showcase</text>
+  
+  <!-- Center visual: Modern portfolio layout -->
+  <g transform="translate(400, 250)">
+    <!-- Main container -->
+    <rect x="-110" y="-70" width="220" height="140" rx="8" stroke="#5eead4" stroke-width="3" fill="none" opacity="0.6"/>
+    
+    <!-- Navigation header -->
+    <rect x="-105" y="-65" width="210" height="25" rx="4" stroke="#5eead4" stroke-width="2.5" fill="#5eead4" fill-opacity="0.08" opacity="0.7"/>
+    <!-- Nav items -->
+    <circle cx="-80" cy="-52.5" r="4" fill="#5eead4" opacity="0.4"/>
+    <circle cx="-40" cy="-52.5" r="4" fill="#5eead4" opacity="0.4"/>
+    <circle cx="0" cy="-52.5" r="4" fill="#5eead4" opacity="0.4"/>
+    
+    <!-- Hero section -->
+    <rect x="-105" y="-35" width="210" height="35" rx="4" stroke="#5eead4" stroke-width="2" fill="#5eead4" fill-opacity="0.05" opacity="0.5"/>
+    <!-- Hero text lines -->
+    <line x1="-95" y1="-20" x2="85" y2="-20" stroke="#5eead4" stroke-width="2" opacity="0.3"/>
+    <line x1="-95" y1="-10" x2="60" y2="-10" stroke="#5eead4" stroke-width="2" opacity="0.3"/>
+    
+    <!-- Content grid -->
+    <rect x="-105" y="5" width="100" height="65" rx="4" stroke="#5eead4" stroke-width="2" fill="#5eead4" fill-opacity="0.05" opacity="0.5"/>
+    <rect x="5" y="5" width="100" height="65" rx="4" stroke="#5eead4" stroke-width="2" fill="#5eead4" fill-opacity="0.05" opacity="0.5"/>
+    
+    <!-- Grid items -->
+    <rect x="-95" y="15" width="40" height="25" rx="2" stroke="#5eead4" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <rect x="-45" y="15" width="40" height="25" rx="2" stroke="#5eead4" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <rect x="15" y="15" width="40" height="25" rx="2" stroke="#5eead4" stroke-width="1.5" fill="none" opacity="0.3"/>
+    <rect x="65" y="15" width="30" height="25" rx="2" stroke="#5eead4" stroke-width="1.5" fill="none" opacity="0.3"/>
+  </g>
+</svg>
+
