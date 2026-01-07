@@ -106,7 +106,7 @@ export default function Hero() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
-          className="text-lg text-gray-400 max-w-2xl leading-relaxed mb-8"
+          className="text-lg text-gray-400 max-w-4xl leading-relaxed mb-8"
         >
           4th year student at the University of British Columbia studying Computer Science and Data Science.
         </motion.p>

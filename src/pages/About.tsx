@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, easeOut } from "framer-motion";
 import { Link } from "react-router-dom";
 import AgeTicker from "../components/hero/AgeTicker";
 
@@ -28,7 +28,7 @@ export default function About() {
       y: 0,
       transition: {
         duration: 0.6,
-        ease: "easeOut",
+        ease: easeOut,
       },
     },
   };

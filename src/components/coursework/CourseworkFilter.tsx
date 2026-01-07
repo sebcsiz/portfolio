@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { useState } from "react";
 import { coursework, type Course } from "../../data/coursework";
 import Section from "../layout/Section";
@@ -23,7 +23,7 @@ const itemVariants = {
     x: 0,
     transition: {
       duration: 0.4,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
@@ -82,7 +82,6 @@ export default function CourseworkFilter() {
       return matchesCategory && matchesYearLevel;
     })
     .sort((a, b) => {
-      // Extract numeric part from course code (e.g., "111" from "COSC 111")
       const getCourseNumber = (code: string): number => {
         const match = code.match(/(\d+)/);
         return match ? parseInt(match[1], 10) : 0;

@@ -29,6 +29,12 @@ export default function Navbar() {
               >
                 Coursework
               </a>
+              <a
+                href="#contact"
+                className="hover:text-teal-400 transition-colors duration-200"
+              >
+                Contact
+              </a>
             </>
           )}
           <Link

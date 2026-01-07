@@ -38,7 +38,7 @@ export const projects: Project[] = [
   {
     id: "4",
     title: "Chatroom Web Application",
-    description: "A chatroom web application that allows users to chat with each other. Built for chatting via locally or online with others via IP address.",
+    description: "A chatroom web application that allows users to chat with each other. Built for chatting locally or online with others via IP address.",
     technologies: ["Java (JSP)", "WebSockets", "Apache Tomcat", "JDBC"],
     githubUrl: "https://github.com/sebcsiz/COSC318-Project",
     imageUrl: "/project-covers/chatroom-app.svg",

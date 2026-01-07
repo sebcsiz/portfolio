@@ -2,6 +2,7 @@ import Hero from "../components/hero/Hero";
 import Terminal from "../components/terminal/Terminal";
 import ProjectsGrid from "../components/projects/ProjectsGrid";
 import CourseworkFilter from "../components/coursework/CourseworkFilter";
+import Contact from "../components/contact/Contact";
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
       <Terminal />
       <ProjectsGrid />
       <CourseworkFilter />
+      <Contact/>
     </main>
   );
 }

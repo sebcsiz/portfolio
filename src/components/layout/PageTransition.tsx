@@ -1,4 +1,5 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence} from "framer-motion";
+import type { Variants } from "framer-motion";
 import { useLocation } from "react-router-dom";
 
 interface PageTransitionProps {
@@ -8,7 +9,7 @@ interface PageTransitionProps {
 export default function PageTransition({ children }: PageTransitionProps) {
   const location = useLocation();
 
-  const pageVariants = {
+  const pageVariants: Variants = {
     initial: {
       opacity: 0,
       rotateY: 90,
@@ -22,7 +23,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
       z: 0,
       transition: {
         duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
     exit: {
@@ -32,7 +33,7 @@ export default function PageTransition({ children }: PageTransitionProps) {
       z: -200,
       transition: {
         duration: 0.9,
-        ease: [0.22, 1, 0.36, 1],
+        ease: [0.22, 1, 0.36, 1] as const,
       },
     },
   };

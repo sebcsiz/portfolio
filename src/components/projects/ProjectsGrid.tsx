@@ -1,4 +1,4 @@
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, easeOut } from "framer-motion";
 import { useState, useRef, useEffect } from "react";
 import { projects, type Project } from "../../data/projects";
 import Section from "../layout/Section";
@@ -20,18 +20,17 @@ const itemVariants = {
     y: 0,
     transition: {
       duration: 0.5,
-      ease: "easeOut",
+      ease: easeOut,
     },
   },
 };
 
-function ProjectCard({ project, index }: { project: Project; index: number }) {
+function ProjectCard({ project }: { project: Project }) {
   const [showTooltip, setShowTooltip] = useState(false);
   const [isTruncated, setIsTruncated] = useState(false);
   const descriptionRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
-    // Check if text is truncated by comparing scrollHeight to clientHeight
     if (descriptionRef.current) {
       const element = descriptionRef.current;
       setIsTruncated(element.scrollHeight > element.clientHeight);
@@ -89,7 +88,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
           {project.description}
         </p>
         
-        {/* Tooltip popup for full description */}
         <AnimatePresence>
           {showTooltip && isTruncated && (
             <motion.div
@@ -103,7 +101,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
               <p className="text-sm text-gray-300 leading-relaxed">
                 {project.description}
               </p>
-              {/* Tooltip arrow */}
               <div className="absolute -top-1 left-6 w-2 h-2 bg-panel border-l border-t border-teal-400/50 rotate-45"></div>
             </motion.div>
           )}
@@ -133,7 +130,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span>→</span>
           </a>
         )}
-        {project.liveUrl && (
+        {/* {project.liveUrl && (
           <a
             href={project.liveUrl}
             target="_blank"
@@ -143,7 +140,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             <span>Live Demo</span>
             <span>→</span>
           </a>
-        )}
+        )} */}
       </div>
     </motion.div>
   );
@@ -197,8 +194,8 @@ export default function ProjectsGrid() {
               viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {inProgressProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
+              {inProgressProjects.map((project) => (
+                <ProjectCard key={project.id} project={project} />
               ))}
             </motion.div>
           </div>
@@ -229,8 +226,8 @@ export default function ProjectsGrid() {
               viewport={{ once: true, margin: "-100px" }}
               className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
             >
-              {completedProjects.map((project, index) => (
-                <ProjectCard key={project.id} project={project} index={index} />
+              {completedProjects.map((project) => (
+                <ProjectCard key={project.id} project={project}/>
               ))}
             </motion.div>
           </div>
@@ -239,4 +236,3 @@ export default function ProjectsGrid() {
     </Section>
   );
 }
-
