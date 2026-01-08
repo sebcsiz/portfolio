@@ -29,7 +29,7 @@ export default function Contact() {
         </h2>
 
         <p className="text-gray-400 mb-10">
-          Feel free to send me a messgae and I will respond as soon as I can!
+          Feel free to send me a message and I will respond as soon as I can!
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
