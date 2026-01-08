@@ -57,7 +57,7 @@ function ProjectCard({ project }: { project: Project }) {
       <div className="relative mb-4">
         {project.imageUrl ? (
           <img 
-            src={project.imageUrl} 
+            src={`${import.meta.env.BASE_URL}${project.imageUrl}`}
             alt={project.title}
             className="w-full h-48 object-cover rounded-lg"
           />
