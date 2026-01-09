@@ -8,16 +8,21 @@ export default function Hero() {
   const [showTyping, setShowTyping] = useState(false);
   const [displayedText, setDisplayedText] = useState("");
   const [isTyping, setIsTyping] = useState(false);
-  
+
   const fullText = "Hi, my name is Sebastian, I build things that occasionally work.";
-  const typingSpeed = 50; 
+  const typingSpeed = 50;
   const sebastianFadeInDelay = 800;
   const typingStartDelay = 600;
+
+  const scrollToId = (id: string) => {
+    const el = document.getElementById(id);
+    if (el) el.scrollIntoView({ behavior: "smooth" });
+  };
 
   useEffect(() => {
     const sebastianTimer = setTimeout(() => {
       setShowSebastian(true);
-      
+
       const typingTimer = setTimeout(() => {
         setShowTyping(true);
         setIsTyping(true);
@@ -67,7 +72,7 @@ export default function Hero() {
                 Sebastian Csizmazia
               </motion.h1>
             )}
-            
+
             {showTyping && (
               <motion.div
                 key="typing"
@@ -80,10 +85,11 @@ export default function Hero() {
                 {displayedText.split("").map((char, index) => {
                   const sebastianStart = fullText.indexOf("Sebastian");
                   const sebastianEnd = sebastianStart + "Sebastian".length;
-                  const colorClass = index >= sebastianStart && index < sebastianEnd 
-                    ? "text-white" 
-                    : "text-teal-400";
-                  
+                  const colorClass =
+                    index >= sebastianStart && index < sebastianEnd
+                      ? "text-white"
+                      : "text-teal-400";
+
                   return (
                     <span key={index} className={colorClass}>
                       {char}
@@ -101,7 +107,7 @@ export default function Hero() {
             )}
           </AnimatePresence>
         </div>
-        
+
         <motion.p
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
@@ -110,7 +116,7 @@ export default function Hero() {
         >
           4th year student at the University of British Columbia studying Computer Science and Data Science.
         </motion.p>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -118,25 +124,25 @@ export default function Hero() {
         >
           <AgeTicker />
         </motion.div>
-        
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.7 }}
           className="flex gap-4 mt-8"
         >
-          <a
-            href="#projects"
+          <button
+            onClick={() => scrollToId("projects")}
             className="px-6 py-3 bg-teal-400 text-[#0b0b0f] font-semibold rounded-lg hover:bg-teal-300 transition-colors duration-200"
           >
             View Projects
-          </a>
-          <a
-            href="#coursework"
+          </button>
+          <button
+            onClick={() => scrollToId("coursework")}
             className="px-6 py-3 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-teal-400 hover:text-teal-400 transition-colors duration-200"
           >
             View Coursework
-          </a>
+          </button>
           <Link
             to="/about"
             className="px-6 py-3 border border-gray-600 text-gray-300 font-semibold rounded-lg hover:border-teal-400 hover:text-teal-400 transition-colors duration-200"
@@ -148,4 +154,3 @@ export default function Hero() {
     </motion.section>
   );
 }
-
