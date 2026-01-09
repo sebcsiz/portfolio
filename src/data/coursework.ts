@@ -9,6 +9,7 @@ export type Course = {
   grade?: string;
   category: "Computer Science" | "Mathematics" | "Data Science & Statistics" | "Other";
   yearLevel: 1 | 2 | 3 | 4;
+  inProgress?: boolean;
 };
 
 export const coursework: Course[] = [
@@ -451,5 +452,53 @@ export const coursework: Course[] = [
     topics: ["Kantian Ethics", "Bias", "Virtues", "Ethics regarding Artificial Intelligence"],
     category: "Other",
     yearLevel: 3
-  }
+  },
+  {
+    id: "41",
+    title: "Introduction to Operating Systems",
+    code: "COSC 315",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Spring 2026",
+    description: `Introduction to batch, multiprogramming, and time-sharing systems. Process synchronization and communication. Main memory allocation techniques including virtual memory; process scheduling; deadlock avoidance and prevention; file organization and device management.`,
+    topics: ["C (Programming language)", "Processes and Threads", "Memory Management", "File Systems"],
+    category: "Computer Science",
+    yearLevel: 3,
+    inProgress: true
+  },
+  {
+    id: "42",
+    title: "Introduction to Artificial Intelligence",
+    code: "COSC 322",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Spring 2026",
+    description: `AI and intelligent agents; state space search; game playing agents; logic and knowledge-based agents; constraint programming; planning; reasoning and decision making under uncertainty; machine learning; natural language understanding.`,
+    topics: ["State space search", "Machine learning", "Knowledge representation", "Planning algorithms", "Monte Carlo methods", "Minimax algorithm"],
+    category: "Computer Science",
+    yearLevel: 3,
+    inProgress: true
+  },
+  {
+    id: "43",
+    title: "Deep Learning",
+    code: "COSC 419B",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Spring 2026",
+    description: `Linear Models, Regularizatrion and Optimization, Multi-layer perceptrons, Backpropagation, Deep Learning and CNN, CNN Architectures, Recurrent Neural Networks, Attention, Transformers, Vision Transformers, Generalization and fine tuning, Object detection and segmentation, Object Tracking`,
+    topics: ["Deep Learning techniques", "Neural Networks", "Computer Vision", "Natural Language Processing"],
+    category: "Computer Science",
+    yearLevel: 4,
+    inProgress: true
+  },
+  {
+    id: "44",
+    title: "Probability and Statistical Inference",
+    code: "STAT 401",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Spring 2026",
+    description: `Theory of statistical modelling: distributions of data, likelihood-based inference for learning unknown parameters, construction of confidence intervals and development of tests. Bayesian methods will be used to contrast standard statistical procedures.`,
+    topics: ["Distributions of Data", "Point Estimation", "Bayesian methods", "Construction of confidence intervals", "Development of tests"],
+    category: "Data Science & Statistics",
+    yearLevel: 4,
+    inProgress: true
+  },
 ];

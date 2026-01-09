@@ -55,7 +55,7 @@ export const projects: Project[] = [
     id: "6",
     title: "Portfolio Website",
     description: "A portfolio website that showcases my projects and completed coursework.",
-    technologies: ["TypeScript", "Vite", "Tailwind CSS", "React", "Vercel"],
+    technologies: ["TypeScript", "Vite", "Tailwind CSS", "React"],
     inProgress: true,
     imageUrl: "project-covers/portfolio-website.svg",
   },
