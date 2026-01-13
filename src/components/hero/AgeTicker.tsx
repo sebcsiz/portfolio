@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
@@ -19,22 +20,22 @@ export default function AgeTicker() {
   }, []);
 
   return (
-    <motion.div
+    <motion.span
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
-      className="mt-6 font-mono text-gray-400 text-lg"
+      className="
+        font-mono
+        text-teal-400
+        font-semibold
+        mx-1
+        inline-block
+        tabular-nums
+        text-sm
+        sm:text-base
+      "
     >
-      Age:{" "}
-      <motion.span
-        key={age.toFixed(9)}
-        initial={{ scale: 1.2 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.2 }}
-        className="text-teal-400 font-semibold"
-      >
-        {age.toFixed(9)}
-      </motion.span>
-    </motion.div>
+      {age.toFixed(9)}
+    </motion.span>
   );
 }
