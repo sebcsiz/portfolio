@@ -7,7 +7,7 @@ export default function About() {
     { category: "Languages", items: ["Java", "Python", "R", "PHP", "Swift", "Visual Basic", "C++", "JavaScript"] },
     { category: "Libraries & Frameworks", items: ["Node.js", ".NET", "FastAPI", "Pandas", "NumPy", "Scikit-learn"] },
     { category: "Database", items: ["Oracle SQL Developer", "MySQL", "SQLite", "Firebase"] },
-    { category: "Tools", items: ["Linux", "Apache", "Git", "Docker", "CI/CD"] },
+    { category: "Tools", items: ["Linux", "Apache Server", "Git", "Docker", "CI/CD"] },
   ];
 
   const containerVariants = {
@@ -65,16 +65,12 @@ export default function About() {
               writing clear, maintainable code, validating results with quantitative reasoning, and iterating based on 
               measurable outcomes such as model accuracy, performance, and system reliability.
             </p>
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-300 text-lg leading-relaxed mb-4">
               I am currently
               <AgeTicker />
               years old living in Kelowna, Canada. Outside of school I enjoy
               playing soccer, snowboarding, and video games.
             </p>
-
-            {/* <div className="mt-6">
-              <AgeTicker />
-            </div> */}
           </div>
         </motion.section>
 

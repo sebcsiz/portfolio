@@ -1,0 +1,44 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#5eead4" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- Card -->
+  <rect width="800" height="500" rx="14" fill="url(#bg-gradient)"/>
+  <rect width="800" height="500" rx="14" filter="url(#noise)" opacity="0.35"/>
+
+  <!-- Title -->
+  <text x="60" y="80"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="32"
+        font-weight="700"
+        fill="#ffffff">
+    Top Level Text
+  </text>
+
+  <!-- Subtitle -->
+  <text x="60" y="115"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="18"
+        fill="#5eead4"
+        opacity="0.85">
+    Bottom level text
+  </text>
+
+  <!-- Drawing tags below -->
+</svg>

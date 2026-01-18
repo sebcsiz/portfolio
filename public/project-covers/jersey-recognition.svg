@@ -1,0 +1,111 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+
+    <!-- Grain -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+
+    <!-- Arrow -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#5eead4" opacity="0.6"/>
+    </marker>
+  </defs>
+
+  <!-- Card -->
+  <rect width="800" height="500" rx="14" fill="url(#bg-gradient)"/>
+  <rect width="800" height="500" rx="14" filter="url(#noise)" opacity="0.35"/>
+
+  <!-- Title -->
+  <text x="60" y="80"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="32"
+        font-weight="700"
+        fill="#ffffff">
+    Jersey Number Recognition
+  </text>
+
+  <!-- Subtitle -->
+  <text x="60" y="115"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="18"
+        fill="#5eead4"
+        opacity="0.85">
+    Deep learning model for player identification
+  </text>
+
+  <!-- ANN Diagram -->
+  <g transform="translate(400,260)" stroke="#5eead4" stroke-width="1.5" opacity="0.6">
+
+    <!-- Input layer -->
+    <circle cx="-160" cy="-40" r="6"/>
+    <circle cx="-160" cy="0" r="6"/>
+    <circle cx="-160" cy="40" r="6"/>
+
+    <!-- Hidden layer -->
+    <circle cx="-60" cy="-60" r="6"/>
+    <circle cx="-60" cy="-20" r="6"/>
+    <circle cx="-60" cy="20" r="6"/>
+    <circle cx="-60" cy="60" r="6"/>
+
+    <!-- Output layer -->
+    <circle cx="60" cy="0" r="10"/>
+
+    <!-- Connections -->
+    <g opacity="0.45">
+      <!-- input → hidden -->
+      <line x1="-160" y1="-40" x2="-60" y2="-60"/>
+      <line x1="-160" y1="-40" x2="-60" y2="-20"/>
+      <line x1="-160" y1="-40" x2="-60" y2="20"/>
+      <line x1="-160" y1="-40" x2="-60" y2="60"/>
+
+      <line x1="-160" y1="0" x2="-60" y2="-60"/>
+      <line x1="-160" y1="0" x2="-60" y2="-20"/>
+      <line x1="-160" y1="0" x2="-60" y2="20"/>
+      <line x1="-160" y1="0" x2="-60" y2="60"/>
+
+      <line x1="-160" y1="40" x2="-60" y2="-60"/>
+      <line x1="-160" y1="40" x2="-60" y2="-20"/>
+      <line x1="-160" y1="40" x2="-60" y2="20"/>
+      <line x1="-160" y1="40" x2="-60" y2="60"/>
+
+      <!-- hidden → output -->
+      <line x1="-60" y1="-60" x2="60" y2="0"/>
+      <line x1="-60" y1="-20" x2="60" y2="0"/>
+      <line x1="-60" y1="20" x2="60" y2="0"/>
+      <line x1="-60" y1="60" x2="60" y2="0"/>
+    </g>
+
+    <!-- Arrow to label -->
+    <path d="M 80 0 L 130 0"
+          stroke-width="2"
+          marker-end="url(#arrowhead)"/>
+
+    <!-- Prediction -->
+    <text x="160" y="8"
+          font-family="system-ui, sans-serif"
+          font-size="20"
+          font-weight="600"
+          fill="#5eead4"
+          opacity="0.85">
+      #10
+    </text>
+
+    <text x="160" y="38"
+          font-family="system-ui, sans-serif"
+          font-size="12"
+          fill="#5eead4"
+          opacity="0.6">
+      Prediction
+    </text>
+  </g>
+</svg>

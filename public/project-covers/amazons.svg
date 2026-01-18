@@ -1,0 +1,92 @@
+<svg width="800" height="500" viewBox="0 0 800 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bg-gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#020617"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+    <!-- Grain -->
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="discrete" tableValues="0 0.08"/>
+      </feComponentTransfer>
+    </filter>
+    <!-- Arrow -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#5eead4" opacity="0.6"/>
+    </marker>
+  </defs>
+  <!-- Card -->
+  <rect width="800" height="500" rx="14" fill="url(#bg-gradient)"/>
+  <rect width="800" height="500" rx="14" filter="url(#noise)" opacity="0.35"/>
+  <!-- Title -->
+  <text x="60" y="80"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="32"
+        font-weight="700"
+        fill="#ffffff">
+    Game of the Amazons AI Agent
+  </text>
+  <!-- Subtitle -->
+  <text x="60" y="115"
+        font-family="system-ui, -apple-system, sans-serif"
+        font-size="18"
+        fill="#5eead4"
+        opacity="0.85">
+    AI game playing agent
+  </text>
+<!-- Amazons Board Diagram (replacement for ANN diagram) -->
+<g transform="translate(400,260)" stroke="#5eead4" stroke-width="1.5" opacity="0.6">
+  <!-- Board grid -->
+  <g opacity="0.35">
+    <!-- Vertical lines -->
+    <line x1="-120" y1="-120" x2="-120" y2="120"/>
+    <line x1="-80" y1="-120" x2="-80" y2="120"/>
+    <line x1="-40" y1="-120" x2="-40" y2="120"/>
+    <line x1="0" y1="-120" x2="0" y2="120"/>
+    <line x1="40" y1="-120" x2="40" y2="120"/>
+    <line x1="80" y1="-120" x2="80" y2="120"/>
+    <line x1="120" y1="-120" x2="120" y2="120"/>
+    <!-- Horizontal lines -->
+    <line x1="-120" y1="-120" x2="120" y2="-120"/>
+    <line x1="-120" y1="-80" x2="120" y2="-80"/>
+    <line x1="-120" y1="-40" x2="120" y2="-40"/>
+    <line x1="-120" y1="0" x2="120" y2="0"/>
+    <line x1="-120" y1="40" x2="120" y2="40"/>
+    <line x1="-120" y1="80" x2="120" y2="80"/>
+    <line x1="-120" y1="120" x2="120" y2="120"/>
+  </g>
+  <!-- Queens (4 total, Amazons-style) -->
+  <g fill="#5eead4" opacity="0.85" font-family="serif" font-size="24" text-anchor="middle">
+    <text x="-80" y="-33">♕</text>
+    <text x="40" y="87">♕</text>
+  </g>
+  <g fill="#5eead4" opacity="0.55" font-family="serif" font-size="24" text-anchor="middle">
+    <text x="-40" y="47">♕</text>
+    <text x="80" y="-73">♕</text>
+  </g>
+  <!-- Optional movement hints -->
+  <g opacity="0.4">
+    <line x1="-80" y1="-40" x2="40" y2="-40"/>
+    <line x1="-40" y1="40" x2="-40" y2="-80"/>
+  </g>
+  <!-- Label -->
+  <text x="150" y="8"
+        font-family="system-ui, sans-serif"
+        font-size="20"
+        font-weight="600"
+        fill="#5eead4"
+        opacity="0.85">
+    Move
+  </text>
+  <text x="150" y="38"
+        font-family="system-ui, sans-serif"
+        font-size="12"
+        fill="#5eead4"
+        opacity="0.6">
+    Game State
+  </text>
+</g>
+</svg>
