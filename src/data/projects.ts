@@ -57,13 +57,14 @@ export const projects: Project[] = [
     description: "A portfolio website that showcases my projects and completed coursework.",
     technologies: ["TypeScript", "Vite", "Tailwind CSS", "React"],
     inProgress: true,
+    githubUrl: "https://github.com/sebcsiz/portfolio",
     imageUrl: "project-covers/portfolio-website.svg",
   },
   {
     id: "7",
     title: "Open xG Prediction Model",
     description: "An xG prediction model that uses machine learning to predict the likelihood of a goal being scored in a soccer match from a short video",
-    technologies: ["Python", "OpenCV", "Scikit-learn", "Machine Learning", "FFmpeg"],
+    technologies: ["Python", "OpenCV", "PyTorch", "Machine Learning", "FFmpeg"],
     inProgress: true,
     imageUrl: "project-covers/xg-prediction.svg",
   },
@@ -72,7 +73,7 @@ export const projects: Project[] = [
     title: "Jersey number recognition model",
     description: "A course project for deep learning that recognizes Jersey Numbers in sports video footage. The system analyzes video tracklets of players to detect the jersey number (0-99) or return -1 if no number is visible.",
     technologies: ["Python", "PyTorch", "OpenCV", "Deep Learning", "Computer Vision"],
-    inProgress: true,
+    inProgress: false,
     imageUrl: "project-covers/jersey-recognition.svg",
   },
   {
@@ -80,7 +81,8 @@ export const projects: Project[] = [
     title: "Game of the Amazons AI agent",
     description: "A course project for Artificial Intelligence that implements an AI agent to play the Game of the Amazons using the minimax algorithm with alpha-beta pruning and heuristic evaluation functions.",
     technologies: ["Java", "Artificial Intelligence", "Minimax Algorithm", "Alpha-Beta Pruning"],
-    inProgress: true,
+    inProgress: false,
+    githubUrl: "https://github.com/JUICEM0N/Game-of-Amazons-Bot",
     imageUrl: "project-covers/amazons.svg",
   }
 ];
