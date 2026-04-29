@@ -75,6 +75,7 @@ export const projects: Project[] = [
     description: "A course project for deep learning that recognizes Jersey Numbers in sports video footage. The system analyzes video tracklets of players to detect the jersey number (0-99) or return -1 if no number is visible.",
     technologies: ["Python", "PyTorch", "OpenCV", "Deep Learning", "Computer Vision"],
     inProgress: false,
+    githubUrl: "https://github.com/sebcsiz/jersey-number-recognition-team8",
     imageUrl: "project-covers/jersey-recognition.svg",
   },
   {
