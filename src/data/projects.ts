@@ -13,11 +13,12 @@ export type Project = {
 export const projects: Project[] = [
   {
     id: "1",
-    title: "E-Commerce Platform",
-    description: "A full-stack e-commerce solution with user authentication, payment processing, email integration and user/admin dashboard. Built with modern web technologies for optimal performance.",
-    technologies: ["Next.js", "JavaScript", "FastAPI", "Docker", "Stripe", "SendGrid"],
-    githubUrl: "https://github.com/sebcsiz/Amazon-Clone",
-    imageUrl: "project-covers/ecommerce-platform.svg",
+    title: "Payment Risk Platform",
+    description: "A full-stack e-commerce solution with user authentication, payment processing, email integration and user/admin dashboard. Built with modern web technologies for optimal performance. Currently upgrading to include a fraud detection ML model, and migrating data persistently from JSON to PostgreSQL.",
+    technologies: ["Next.js", "PyTorch", "FastAPI", "PostgreSQL", "Docker", "Stripe", "SendGrid"],
+    inProgress: true,
+    githubUrl: "https://github.com/sebcsiz/Payment-Risk-Platform",
+    imageUrl: "project-covers/payment_risk_platform_card.svg",
   },
   {
     id: "2",

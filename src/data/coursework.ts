@@ -463,7 +463,7 @@ export const coursework: Course[] = [
     topics: ["C (Programming language)", "Processes and Threads", "Memory Management", "File Systems"],
     category: "Computer Science",
     yearLevel: 3,
-    inProgress: true
+    inProgress: false
   },
   {
     id: "42",
@@ -475,7 +475,7 @@ export const coursework: Course[] = [
     topics: ["State space search", "Machine learning", "Knowledge representation", "Planning algorithms", "Monte Carlo methods", "Minimax algorithm"],
     category: "Computer Science",
     yearLevel: 3,
-    inProgress: true
+    inProgress: false
   },
   {
     id: "43",
@@ -487,7 +487,7 @@ export const coursework: Course[] = [
     topics: ["Deep Learning techniques", "Neural Networks", "Computer Vision", "Natural Language Processing"],
     category: "Computer Science",
     yearLevel: 4,
-    inProgress: true
+    inProgress: false
   },
   {
     id: "44",
@@ -498,6 +498,18 @@ export const coursework: Course[] = [
     description: `Theory of statistical modelling: distributions of data, likelihood-based inference for learning unknown parameters, construction of confidence intervals and development of tests. Bayesian methods will be used to contrast standard statistical procedures.`,
     topics: ["Distributions of Data", "Point Estimation", "Bayesian methods", "Construction of confidence intervals", "Development of tests"],
     category: "Data Science & Statistics",
+    yearLevel: 4,
+    inProgress: false
+  },
+  {
+    id: "45",
+    title: "Capstone Software Engineering Project",
+    code: "COSC 499",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Summer 2026",
+    description: `A capstone project requiring team software development for an actual client. Students must produce a comprehensive report and deliver a formal presentation.`,
+    topics: ["Software Development", "Project Management", "Client Communication"],
+    category: "Computer Science",
     yearLevel: 4,
     inProgress: true
   },

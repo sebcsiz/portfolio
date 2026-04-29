@@ -4,10 +4,10 @@ import AgeTicker from "../components/hero/AgeTicker";
 
 export default function About() {
   const skills = [
-    { category: "Languages", items: ["Java", "Python", "R", "PHP", "Swift", "Visual Basic", "C++", "JavaScript"] },
-    { category: "Libraries & Frameworks", items: ["Node.js", ".NET", "FastAPI", "Pandas", "NumPy", "Scikit-learn"] },
-    { category: "Database", items: ["Oracle SQL Developer", "MySQL", "SQLite", "Firebase"] },
-    { category: "Tools", items: ["Linux", "Apache Server", "Git", "Docker", "CI/CD"] },
+    { category: "Languages", items: ["Java", "Python", "C", "Swift", "R", "PHP", "JavaScript"] },
+    { category: "Libraries & Frameworks", items: ["Node.js", ".NET (Visual Basic)", "FastAPI", "Pandas", "NumPy", "PyTorch"] },
+    { category: "Database", items: ["Oracle SQL Developer", "MySQL", "PostgreSQL", "SQLite", "Firebase"] },
+    { category: "Tools", items: ["Linux", "Apache Server", "Git", "Docker", "CI/CD", "LaTeX"] },
   ];
 
   const containerVariants = {
