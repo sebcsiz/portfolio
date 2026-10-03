@@ -74,7 +74,7 @@ export const coursework: Course[] = [
     code: "COSC 310",
     institution: "University of British Columbia - Okanagan",
     semester: "Fall 2025",
-    description: `Techniques to construct large systems using fundamental activities of specification, design, implementation, testing, and maintenance. Various life cycle models, exposure to software development tools, modelling techniques, good development practices, and project management..`,
+    description: `Techniques to construct large systems using fundamental activities of specification, design, implementation, testing, and maintenance. Various life cycle models, exposure to software development tools, modelling techniques, good development practices, and project management.`,
     topics: ["Software Design", "Requirements Engineering", "Testing", "Version Control", "Agile Development"],
     category: "Computer Science",
     yearLevel: 3
@@ -305,7 +305,7 @@ export const coursework: Course[] = [
     code: "COSC 126",
     institution: "Okanagan College",
     semester: "Spring 2024",
-    description: `activities associated with developing computer-based information systems. Online systems, including all aspects dealing with the use of databases and data communications, will be emphasized. Practical work will expose students to relational database management systems within a client-server environment and may include Computer Assisted Software Engineering (CASE) tools.`,
+    description: `Activities associated with developing computer-based information systems. Online systems, including all aspects dealing with the use of databases and data communications, will be emphasized. Practical work will expose students to relational database management systems within a client-server environment and may include Computer Assisted Software Engineering (CASE) tools.`,
     topics: ["Software Development Lifecycle", "Software Methodologies", "Architecture & UX Design"],
     category: "Computer Science",
     yearLevel: 1
@@ -338,7 +338,7 @@ export const coursework: Course[] = [
     code: "COSC 211",
     institution: "Okanagan College",
     semester: "Spring 2024",
-    description: `introduction to the conceptual structure and functional characteristics of a computer. Topics include computer organization, memory addressing schemes, and decoding and executing instructions. Laboratory assignments use the assembly language of selected machines.`,
+    description: `Introduction to the conceptual structure and functional characteristics of a computer. Topics include computer organization, memory addressing schemes, and decoding and executing instructions. Laboratory assignments use the assembly language of selected machines.`,
     topics: ["AVR ISA", "C", "Low-level thinking"],
     category: "Computer Science",
     yearLevel: 2
@@ -483,7 +483,7 @@ export const coursework: Course[] = [
     code: "COSC 419B",
     institution: "University of British Columbia - Okanagan",
     semester: "Spring 2026",
-    description: `Linear Models, Regularizatrion and Optimization, Multi-layer perceptrons, Backpropagation, Deep Learning and CNN, CNN Architectures, Recurrent Neural Networks, Attention, Transformers, Vision Transformers, Generalization and fine tuning, Object detection and segmentation, Object Tracking`,
+    description: `Linear Models, Regularization and Optimization, Multi-layer perceptrons, Backpropagation, Deep Learning and CNN, CNN Architectures, Recurrent Neural Networks, Attention, Transformers, Vision Transformers, Generalization and fine tuning, Object detection and segmentation, Object Tracking`,
     topics: ["Deep Learning techniques", "Neural Networks", "Computer Vision", "Natural Language Processing"],
     category: "Computer Science",
     yearLevel: 4,
@@ -509,6 +509,42 @@ export const coursework: Course[] = [
     semester: "Summer 2026",
     description: `A capstone project requiring team software development for an actual client. Students must produce a comprehensive report and deliver a formal presentation.`,
     topics: ["Software Development", "Project Management", "Client Communication"],
+    category: "Computer Science",
+    yearLevel: 4,
+    inProgress: false
+  },
+  {
+    id: "46",
+    title: "Machine Learning",
+    code: "DATA 311",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Fall 2026",
+    description: `Regression, classification, resampling, model selection and validation, fundamental properties of matrices, dimension reduction, tree-based methods, unsupervised learning.`,
+    topics: ["Regression", "Classification", "Model Selection & Validation", "Dimension Reduction", "Tree-based Methods", "Unsupervised Learning"],
+    category: "Data Science & Statistics",
+    yearLevel: 3,
+    inProgress: true
+  },
+  {
+    id: "47",
+    title: "Modelling and Simulation",
+    code: "COSC 405",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Fall 2026",
+    description: `Numeric dynamic systems models and emphasis on discrete stochastic systems. State description of models, common model components, entities. Common simulation language. Simulation using algebraic languages. Simulation methodology: data collection, model design, output analysis, optimization, validation. Elements of queuing theory, relationship to simulation. Applications to computer systems models.`,
+    topics: ["Discrete Stochastic Systems", "Simulation Methodology", "Output Analysis", "Queuing Theory"],
+    category: "Computer Science",
+    yearLevel: 4,
+    inProgress: true
+  },
+  {
+    id: "48",
+    title: "Network Science",
+    code: "COSC 421",
+    institution: "University of British Columbia - Okanagan",
+    semester: "Fall 2026",
+    description: `Graphs and complex networks in scientific research. Probabilistic and statistical models. Structures, patterns, and behaviors in networks. Algorithmic and statistical methods (online/mobile), social networks, and social media platforms. Social influence, information diffusion, and viral marketing. Sentiment analysis and opinion mining. Data privacy. Search engines and recommendation systems.`,
+    topics: ["Complex Networks", "Social Networks", "Information Diffusion", "Sentiment Analysis", "Recommendation Systems"],
     category: "Computer Science",
     yearLevel: 4,
     inProgress: true

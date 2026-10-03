@@ -3,19 +3,22 @@ export default {
   content: ["./index.html", "./src/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: {
+        short: { raw: "(max-height: 500px)" }, // phones held sideways
+      },
       colors: {
-        bg: {
-          DEFAULT: "#0b0b0f",
-        },
-        panel: {
-          DEFAULT: "#111118",
-        },
-        accent: {
-          DEFAULT: "#5eead4",
-        },
+        bg: "#0e0e0c",
+        panel: "#161512",
+        line: "#2a2924",
+        ink: "#ecebe4",
+        muted: "#8f8d84",
+        accent: "rgb(var(--accent) / <alpha-value>)", // set per theme in index.css
       },
       fontFamily: {
-        mono: ["JetBrains Mono", "monospace"],
+        sans: ['"Bricolage Grotesque"', "system-ui", "sans-serif"],
+        serif: ['"Instrument Serif"', "Georgia", "serif"],
+        mono: ['"JetBrains Mono"', "ui-monospace", "monospace"],
+        pixel: ["Silkscreen", "ui-monospace", "monospace"],
       },
     },
   },
