@@ -2,33 +2,159 @@
 @tailwind components;
 @tailwind utilities;
 
+/* accent per hub skin, as RGB channels so Tailwind can add alpha (bg-accent/50) */
+:root { --accent: 43 212 106; } /* pitch green */
+[data-theme="snow"] { --accent: 125 211 252; } /* ice blue */
+[data-theme="game"] { --accent: 255 204 51; } /* arcade yellow */
+
+/* the hub is the whole page; rooms scroll inside their own panel */
+html, body { height: 100%; overflow: hidden; }
+
 html {
-  background-color: #0b0b0f;
-  color: #e5e7eb;
-  scroll-behavior: smooth;
+  background: #0e0e0c;
+  color: #ecebe4;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  @apply font-sans antialiased;
 }
 
-::-webkit-scrollbar {
-  width: 10px;
+/* film grain over everything */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.07;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
-::-webkit-scrollbar-track {
-  background: #0b0b0f;
+::selection { background: rgb(var(--accent)); color: #0e0e0c; }
+:focus-visible { outline: 2px solid rgb(var(--accent)); outline-offset: 3px; border-radius: 4px; }
+h1, h2, h3 { text-wrap: balance; }
+p { text-wrap: pretty; }
+
+.name-letter {
+  font-variation-settings: "wght" 380;
+  transition: font-variation-settings 0.3s ease-out, color 0.4s;
+}
+/* no cursor on touch screens: let the name breathe on its own */
+@media (hover: none) {
+  .name-letter { animation: breathe 3.6s ease-in-out infinite; animation-delay: calc(var(--i) * 140ms); }
+  .pixel-letter { animation: hop 2.6s steps(1) infinite; animation-delay: calc(var(--i) * 120ms); }
+}
+@keyframes breathe { 50% { font-variation-settings: "wght" 760; } }
+@keyframes hop { 0%, 84%, 100% { translate: 0 0; } 88%, 96% { translate: 0 -0.12em; } }
+.pixel-letter { transition: translate 0.12s steps(2); }
+
+/* anything placed on a hub stage via CSS vars, with separate spots for portrait screens */
+.placed { left: var(--x); top: var(--y); }
+@media (orientation: portrait) {
+  .placed { left: var(--px); top: var(--py); }
 }
 
-::-webkit-scrollbar-thumb {
-  background: #2a2a35;
-  border-radius: 5px;
+/* pitch: mowed stripes, rotated for portrait */
+.pitch { background: repeating-linear-gradient(90deg, rgba(236, 235, 228, 0.02) 0 calc(100% / 14), transparent 0 calc(100% / 7)); }
+@media (orientation: portrait) {
+  .pitch { background: repeating-linear-gradient(180deg, rgba(236, 235, 228, 0.02) 0 calc(100% / 14), transparent 0 calc(100% / 7)); }
+}
+.player-ring { animation: bob 3.4s ease-in-out infinite; animation-delay: calc(var(--i) * -0.7s); }
+@keyframes bob { 50% { translate: 0 -5px; } }
+.pass-line { animation: march 0.5s linear infinite; }
+@keyframes march { to { stroke-dashoffset: -12; } }
+
+/* project and paper covers: dot-grid canvas; CSS animations pause while off screen */
+.cover { background: radial-gradient(circle at 1px 1px, rgb(236 235 228 / 0.06) 1px, transparent 0) 0 0 / 16px 16px, #10110e; }
+.cover:not([data-live]) * { animation-play-state: paused !important; }
+.cover .pop { transform-box: fill-box; transform-origin: center; animation: pop 0.35s cubic-bezier(0.3, 1.6, 0.6, 1); }
+@keyframes pop { from { transform: scale(0); opacity: 0; } }
+.cover .drop { animation: drop 0.45s cubic-bezier(0.55, 0, 1, 0.45); }
+@keyframes drop { from { transform: translateY(var(--fall)); opacity: 0.4; } }
+.cover .scan { animation: scan 0.85s linear forwards; }
+@keyframes scan { to { transform: translateX(134px); } }
+.cover .spin { transform-box: fill-box; transform-origin: center; animation: spin 0.9s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.cover .typing { transform-box: fill-box; animation: typing 0.9s ease-in-out infinite; }
+@keyframes typing { 30% { transform: translateY(-2.5px); opacity: 1; } 60%, 100% { transform: none; opacity: 0.5; } }
+.cover .flash { animation: flash 0.7s ease-out; }
+@keyframes flash { from { fill-opacity: 0.5; } }
+.ph-route { animation: ph-route 7s ease-in-out infinite; }
+@keyframes ph-route { 0%, 8% { stroke-dashoffset: 1; } 55%, 92% { stroke-dashoffset: 0; } 100% { stroke-dashoffset: 1; } }
+.ph-pin { transform-box: fill-box; transform-origin: center; animation: ph-pin 7s ease-out infinite both; }
+@keyframes ph-pin { 0%, 7% { transform: scale(0.5); opacity: 0.35; } 10% { transform: scale(1.35); opacity: 1; } 14%, 90% { transform: scale(1); opacity: 1; } 100% { transform: scale(0.5); opacity: 0.35; } }
+.ph-sheet { animation: ph-sheet 7s ease-out infinite; }
+@keyframes ph-sheet { 0%, 60% { transform: translateY(18px); opacity: 0; } 66%, 92% { transform: none; opacity: 1; } 100% { transform: translateY(18px); opacity: 0; } }
+.mh-scene { transform-box: fill-box; transform-origin: center; animation: mh-scene 9s ease-in-out infinite both; }
+@keyframes mh-scene { 0% { transform: scaleX(0); } 4%, 29% { transform: scaleX(1); } 33.33%, 100% { transform: scaleX(0); } }
+.mh-dot { animation: mh-dot 9s ease-in-out infinite; }
+@keyframes mh-dot { 0%, 30% { transform: none; } 33.33%, 63.33% { transform: translateX(15px); } 66.66%, 96.66% { transform: translateX(30px); } 100% { transform: none; } }
+
+/* mountain: a spot's ring fills (--p from 0 to 1) while the rider waits on it */
+.spot-ring { background: conic-gradient(rgb(var(--accent)) calc(var(--p, 0) * 1turn), rgb(var(--accent) / 0.25) 0); }
+.twinkle { animation: twinkle 3s ease-in-out infinite; }
+
+/* mountain: moonlight from the upper right (plus a faint accent glow over the peak) */
+.moonlit {
+  background:
+    radial-gradient(circle at 87% 17%, rgb(244 241 226 / 0.12), transparent 38%),
+    radial-gradient(ellipse at 66% 0%, rgb(var(--accent) / 0.14), transparent 55%);
+}
+@media (orientation: portrait) {
+  .moonlit {
+    background:
+      radial-gradient(circle at 84% 27%, rgb(244 241 226 / 0.12), transparent 45%),
+      radial-gradient(ellipse at 66% 0%, rgb(var(--accent) / 0.14), transparent 55%);
+  }
+}
+/* the moon itself: lit from the upper left, shaded lower right, soft halo */
+.moon {
+  background: radial-gradient(circle at 34% 30%, #fbfaf2 0%, #e6e3d5 32%, #b3afa1 66%, #77746a 100%);
+  box-shadow:
+    inset -10px -12px 22px rgb(14 14 12 / 0.55),
+    0 0 36px 6px rgb(244 241 226 / 0.25),
+    0 0 120px 36px rgb(244 241 226 / 0.09);
+}
+.crater {
+  background: rgb(120 116 104 / 0.35);
+  box-shadow: inset 1px 1px 2px rgb(0 0 0 / 0.3), inset -1px -1px 1px rgb(255 255 255 / 0.3);
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: #3a3a45;
+/* mountain easter egg: ride off the snow into the sky and the board morphs into a rocket */
+.rider g { transform-box: fill-box; transform-origin: center; transition: opacity 0.2s, transform 0.3s cubic-bezier(0.3, 1.6, 0.6, 1); }
+.rider .rocket-shape,
+.rider[data-mode="rocket"] .board-shape { opacity: 0; transform: scale(0.3); }
+.rider[data-mode="rocket"] .rocket-shape { opacity: 1; transform: scale(1); }
+.flame { transform-box: fill-box; transform-origin: right center; animation: flicker 0.12s ease-in-out infinite alternate; }
+.rider[data-landed] .flame { opacity: 0; animation: none; }
+@keyframes flicker { to { transform: scaleX(0.5); } }
+@keyframes twinkle { 50% { opacity: 0.15; } }
+
+/* arcade: CRT glow, vignette and scanlines over the screen; blinking prompt */
+.crt { background: radial-gradient(ellipse at 50% 40%, rgb(var(--accent) / 0.07), transparent 65%), #0b0b0a; }
+.crt::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  border-radius: inherit;
+  background:
+    radial-gradient(ellipse at center, transparent 60%, rgb(0 0 0 / 0.5)),
+    repeating-linear-gradient(to bottom, rgb(0 0 0 / 0.25) 0 1px, transparent 1px 3px);
 }
+.blink { animation: blink 1.1s steps(1) infinite; }
+@keyframes blink { 50% { opacity: 0; } }
+/* arcade easter egg: Star Fox 64's barrel roll, and a shake for a wrong code */
+.barrel { animation: barrel 1.1s cubic-bezier(0.45, 0, 0.55, 1); }
+@keyframes barrel { 50% { transform: rotate(180deg) scale(0.82); } to { transform: rotate(360deg); } }
+.shake { animation: shake 0.4s; }
+@keyframes shake { 25% { translate: -6px 0; } 75% { translate: 6px 0; } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: 0.01ms !important; }
+}
+
+::-webkit-scrollbar { width: 10px; height: 6px; }
+::-webkit-scrollbar-track { background: #0e0e0c; }
+::-webkit-scrollbar-thumb { background: #2a2924; border-radius: 5px; }
+::-webkit-scrollbar-thumb:hover { background: rgb(var(--accent)); }

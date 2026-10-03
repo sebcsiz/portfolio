@@ -1,11 +1,13 @@
+import type { CoverKind } from "../components/covers/Cover";
+
 export type Project = {
   id: string;
   title: string;
   description: string;
   technologies: string[];
+  cover: CoverKind; // the animation on the project's card
   githubUrl?: string;
   liveUrl?: string;
-  imageUrl?: string;
   featured?: boolean;
   inProgress?: boolean;
 };
@@ -16,9 +18,9 @@ export const projects: Project[] = [
     title: "Payment Risk Platform",
     description: "A full-stack e-commerce solution with user authentication, payment processing, email integration and user/admin dashboard. Built with modern web technologies for optimal performance. Currently upgrading to include a fraud detection ML model, and migrating data persistently from JSON to PostgreSQL.",
     technologies: ["Next.js", "PyTorch", "FastAPI", "PostgreSQL", "Docker", "Stripe", "SendGrid"],
-    inProgress: true,
+    inProgress: false,
     githubUrl: "https://github.com/sebcsiz/Payment-Risk-Platform",
-    imageUrl: "project-covers/payment_risk_platform_card.svg",
+    cover: "risk",
   },
   {
     id: "2",
@@ -26,7 +28,7 @@ export const projects: Project[] = [
     description: "A mobile app for wine tours that allows users to browse and book wine tours.",
     technologies: ["Java", "Android Studio", "HCI Design Principles", "User-Centered Design"],
     githubUrl: "https://github.com/sebcsiz/COSC341-Project",
-    imageUrl: "project-covers/wine-tour-app.svg",
+    cover: "phone",
   },
   {
     id: "3",
@@ -34,7 +36,7 @@ export const projects: Project[] = [
     description: "Created insightful visualizations based on a soccer dataset",
     technologies: ["Python", "Jupyter Notebook", "Understat API", "Matplotlib", "Plotly"],
     githubUrl: "https://github.com/sebcsiz/DATA301-Project",
-    imageUrl: "project-covers/data-analytics.svg",
+    cover: "shots",
   },
   {
     id: "4",
@@ -42,7 +44,7 @@ export const projects: Project[] = [
     description: "A chatroom web application that allows users to chat with each other. Built for chatting locally or online with others via IP address.",
     technologies: ["Java (JSP)", "WebSockets", "Apache Tomcat", "JDBC"],
     githubUrl: "https://github.com/sebcsiz/COSC318-Project",
-    imageUrl: "project-covers/chatroom-app.svg",
+    cover: "chat",
   },
   {
     id: "5",
@@ -50,16 +52,16 @@ export const projects: Project[] = [
     description: "A small chrome extension that allows users to spoof their browser fingerprint.",
     technologies: ["JavaScript", "Chrome Extension"],
     githubUrl: "https://github.com/sebcsiz/Browser-Fingerprint-Spoofer",
-    imageUrl: "project-covers/browser-spoofer.svg",
+    cover: "fingerprint",
   },
   {
     id: "6",
     title: "Portfolio Website",
     description: "A portfolio website that showcases my projects and completed coursework.",
     technologies: ["TypeScript", "Vite", "Tailwind CSS", "React"],
-    inProgress: true,
+    inProgress: false,
     githubUrl: "https://github.com/sebcsiz/portfolio",
-    imageUrl: "project-covers/portfolio-website.svg",
+    cover: "hub",
   },
   {
     id: "7",
@@ -67,16 +69,7 @@ export const projects: Project[] = [
     description: "An xG prediction model that uses machine learning to predict the likelihood of a goal being scored in a soccer match from a short video",
     technologies: ["Python", "OpenCV", "PyTorch", "Machine Learning", "FFmpeg"],
     inProgress: true,
-    imageUrl: "project-covers/xg-prediction.svg",
-  },
-  {
-    id: "8",
-    title: "Jersey number recognition model",
-    description: "A course project for deep learning that recognizes Jersey Numbers in sports video footage. The system analyzes video tracklets of players to detect the jersey number (0-99) or return -1 if no number is visible.",
-    technologies: ["Python", "PyTorch", "OpenCV", "Deep Learning", "Computer Vision"],
-    inProgress: false,
-    githubUrl: "https://github.com/sebcsiz/jersey-number-recognition-team8",
-    imageUrl: "project-covers/jersey-recognition.svg",
+    cover: "neural",
   },
   {
     id: "9",
@@ -85,6 +78,6 @@ export const projects: Project[] = [
     technologies: ["Java", "Artificial Intelligence", "Minimax Algorithm", "Alpha-Beta Pruning"],
     inProgress: false,
     githubUrl: "https://github.com/JUICEM0N/Game-of-Amazons-Bot",
-    imageUrl: "project-covers/amazons.svg",
+    cover: "tree",
   }
 ];
